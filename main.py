@@ -58,6 +58,7 @@ WHERE ipb_user = 0
     AND comment_text NOT LIKE '%chool block%'
     AND comment_text NOT LIKE '%choolblock%'
     AND comment_text NOT LIKE '%heckUser block%'
+    AND comment_text NOT LIKE '%ublic Wi-Fi block%'
     AND ipb_range_start != ipb_range_end
 '''
 
@@ -69,11 +70,13 @@ WHERE ipb_user = 0
     AND ipb_auto = 0
     AND ipb_anon_only = 0
     AND ipb_expiry > DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 30 DAY), '%Y%m%d%H%i%s')
-    AND (comment_text LIKE '%anonblock%'
+    AND (
+        comment_text LIKE '%anonblock%'
         OR comment_text LIKE '%nonblock%'
         OR comment_text LIKE '%ange block%'
         OR comment_text LIKE '%chool block%'
-        OR comment_text LIKE '%choolblock%')
+        OR comment_text LIKE '%choolblock%'
+    )
     AND ipb_range_start != ipb_range_end
 '''
 
