@@ -60,6 +60,7 @@ WHERE ipb_user = 0
     AND comment_text NOT LIKE '%heckUser block%'
     AND comment_text NOT LIKE '%ublic Wi-Fi block%'
     AND ipb_range_start != ipb_range_end
+    AND ipb_address NOT LIKE '%/64'
 '''
 
 query2 = '''
