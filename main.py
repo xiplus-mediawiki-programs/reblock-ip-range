@@ -114,6 +114,7 @@ for row in result1:
         new_summary += '<!-- 請登入您的帳號，若無帳號，請閱讀 https://w.wiki/Jyi -->{{range block}}'
     else:
         new_summary += '<!-- 請閱讀 https://w.wiki/Jyi -->{{CheckUser block}}'
+    comment_text = re.sub(r'<!--+\s*(.*?)\s*--+>', r'，\1', comment_text)
     new_summary += '<!-- ' + comment_text + '，調整封鎖原因 -->'
 
     input('Block {}\n\twith reason {}? '.format(user.username, new_summary))
